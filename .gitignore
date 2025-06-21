@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Build tools
+mvnw
+mvnw.cmd
+
+# Spring Boot specific
+application.yml
+
+
