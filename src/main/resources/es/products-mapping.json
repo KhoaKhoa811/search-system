@@ -1,0 +1,54 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "vietnamese_stop": {
+          "type": "stop",
+          "stopwords": "_vietnamese_"
+        },
+        "ascii_fold": {
+          "type": "asciifolding",
+          "preserve_original": true
+        }
+      },
+      "analyzer": {
+        "vietnamese_custom": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "ascii_fold",
+            "vietnamese_stop"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "name": {
+        "type": "text",
+        "analyzer": "vietnamese_custom"
+      },
+      "description": {
+        "type": "text",
+        "analyzer": "vietnamese_custom"
+      },
+      "category": {
+        "type": "keyword"
+      },
+      "price": {
+        "type": "double"
+      },
+      "stock": {
+        "type": "integer"
+      },
+      "createdAt": {
+        "type": "date"
+      }
+    }
+  }
+}
