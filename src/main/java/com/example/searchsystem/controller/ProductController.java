@@ -35,7 +35,7 @@ public class ProductController {
     public Page<ProductDocument> search(@RequestParam String keyword,
                                         @RequestParam(defaultValue = "0") int page,
                                         @RequestParam(defaultValue = "10") int size) {
-        return productSearchService.search(keyword, page, size);
+        return productSearchService.searchWithPagination(keyword, page, size);
     }
 
     @DeleteMapping("/{id}")
